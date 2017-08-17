@@ -15,6 +15,10 @@ This plugin uses a **shortcode** to save the image in the TinyMCE editor, instea
 
 The difference is that the image is saved as a shortcode, so it gives much better control to theme and plugin developers!
 
+![Editor renders an IMG](screenshot-1.png "Editor renders an IMG")
+
+![Shortcode instead of IMG](screenshot-2.png "Shortcode instead of IMG")
+
 ## What's on the roadmap for this plugin?
 
 Making the shortcode work perfectly would be the top priority at this point. Other functionality like dynamic images can be considered once this plugin has a solid foundation.
