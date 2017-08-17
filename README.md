@@ -17,8 +17,8 @@ The difference is that the image is saved as a shortcode, so it gives much bette
 
 ## What's on the roadmap for this plugin?
 
-Makging the shortcode work perfectly would be the top priority. Other functionality like dynamic image thumbnails can be considered once this plugin has a solid foundation.
+Making the shortcode work perfectly would be the top priority at this point. Other functionality like dynamic images can be considered once this plugin has a solid foundation.
 
 ## Contributing
 
-Please contribute!! The plugin in it's current form is more of a protorype. So contributers will be more than welcome to make it a solid plugin, so it can be considered by WordPress core!
+Please contribute!! The plugin in it's current form is more of a prototype. So contributers will be more than welcome to make it a solid plugin, so it can be considered by WordPress core!
