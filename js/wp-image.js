@@ -92,7 +92,7 @@ tinymce.PluginManager.add( 'wp_image', function( editor ) {
 		var id = getImageId( image );
 		if ( false !== id && id in replacedShortcodes ) {
 			// Prepare image
-			var img = jQuery( image ); // $ will gives error in latest WP version Version 4.8.1
+			var img = jQuery( image );
 
 			// ALT
 			replacedShortcodes[ id ] = replacedShortcodes[ id ].replace( /src="(.*?)"/g, function( match ) {
