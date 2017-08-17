@@ -2,9 +2,9 @@
 
 ## What's the motivation behind this plugin?
 
-This plugin aims to make its way to the WordPress core by build a better way to add images in the WordPress editor.
+This plugin aims to make its way to the WordPress core by building a better way to add images in the WordPress editor.
 
-Currently, when an image is added in the TinyMCE editor, an **HTML IMG** tag is added in. There are a few problems with this approach:
+Currently, when an image is added in the TinyMCE editor, an **HTML IMG** tag is added. There are a few problems with this approach:
 
 1. Manipulating images becomes really hard. This is apparent with the current implementation of responsive images, which uses regex to match images to their IDs
 1. Plugins are limited in what they can do with images added directly in the editor
