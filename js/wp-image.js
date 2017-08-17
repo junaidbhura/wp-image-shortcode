@@ -25,13 +25,19 @@ tinymce.PluginManager.add( 'wp_image', function( editor ) {
 				// First save the shortcode
 				replacedShortcodes[ arguments.attrs.named.id ] = match;
 
+				// Prepare classes
+				var classes = [ 'align' + arguments.attrs.named.align.replace( 'align', '' ) ];
+				classes.push( 'size-' + arguments.attrs.named.size );
+				classes.push( 'wp-image-' + arguments.attrs.named.id );
+				classes.push( arguments.attrs.named.class );
+
 				// Return IMG tag
 				return wp.html.string({
 					tag: 'img',
 					attrs: {
 						'data-wp-img-id': arguments.attrs.named.id,
 						'src': arguments.attrs.named.src,
-						'class': 'align' + arguments.attrs.named.align.replace( 'align', '' ) + ' ' + arguments.attrs.named.class,
+						'class': classes.join( ' ' ),
 						'alt': arguments.attrs.named.alt,
 						'title': arguments.attrs.named.title
 					}
@@ -88,6 +94,11 @@ tinymce.PluginManager.add( 'wp_image', function( editor ) {
 			// Prepare image
 			var img = $( image );
 
+			// ALT
+			replacedShortcodes[ id ] = replacedShortcodes[ id ].replace( /src="(.*?)"/g, function( match ) {
+				return 'src="' + img.attr( 'src' )  + '"';
+			});
+
 			// Alignment
 			var align = 'align="none"';
 			if ( img.is( '.alignleft' ) ) {
@@ -119,7 +130,7 @@ tinymce.PluginManager.add( 'wp_image', function( editor ) {
 					.replace( 'alignright', '' )
 					.replace( 'aligncenter', '' )
 					.replace( 'alignnone', '' );
-				return 'class="' + classAttr + '"';
+				return 'class="' + classAttr.trim() + '"';
 			});
 		}
 	}
