@@ -29,9 +29,8 @@ function wp_image_send_to_editor( $html, $id, $caption, $title, $align, $url, $s
 		'" size="' . $size .
 		'" alt="' . $alt .
 		'" title="' . $title .
-		'" caption="' . $caption .
-		'" align="' . $align .
-		'" url="' . $url . '"]';
+		'" class="' .
+		'" align="' . $align . '"]';
 }
 add_filter( 'image_send_to_editor', 'wp_image_send_to_editor', 10, 8 );
 
@@ -62,9 +61,8 @@ function wp_image_shortcode_wp_image( $atts ) {
 		'size'    => 'thumbnail',
 		'alt'     => '',
 		'title'   => '',
-		'caption' => '',
+		'class'   => '',
 		'align'   => 'none',
-		'url'     => '',
 	) );
 
 	/**
@@ -82,6 +80,7 @@ function wp_image_shortcode_wp_image( $atts ) {
 	$img_atts = apply_filters( 'wp_image_img_attributes', array(
 		'alt'   => $atts['alt'],
 		'title' => $atts['title'],
+		'class' => $atts['class'],
 	) );
 
 	$image = wp_get_attachment_image( $atts['id'], $atts['size'], false, $img_atts );
